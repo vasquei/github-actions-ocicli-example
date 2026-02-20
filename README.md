@@ -16,7 +16,7 @@ At the end of this tutorial, you will be able to:
 
 ## Architecture Overview
 
-![architecture](images/githubactions-oci-connection.png)
+<img src="images/github actions-oci-connection.png" alt="architecture" width="200" height="500">
 
 
 ---
