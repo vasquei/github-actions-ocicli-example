@@ -1,0 +1,47 @@
+name: Create OCI Connection from GitHub Actions, using OCI CLI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  OCI-Deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+
+      - name: 'OCI login configuration'
+        run: |
+          mkdir -p ~/.oci
+          echo "[DEFAULT]" > ~/.oci/config
+          echo "user=${{secrets.OCI_USER}}" >> ~/.oci/config
+          echo "fingerprint=${{secrets.OCI_FINGERPRINT}}" >> ~/.oci/config
+          echo "tenancy=${{secrets.OCI_TENANCY}}" >> ~/.oci/config
+          echo "region=${{secrets.OCI_REGION}}" >> ~/.oci/config
+          echo "${{ secrets.OCI_KEY_FILE_CONTENT }}" > ~/.oci/oci_api_key.pem
+          chmod 600 ~/.oci/oci_api_key.pem
+          echo "region=${{secrets.OCI_REGION}}"
+          echo "key_file=~/.oci/oci_api_key.pem" >> ~/.oci/config
+
+          echo "${{secrets.OCI_KEY_FILE_CONTENT}}" > ~/.oci/oci_api_key.pem
+          chmod 600 ~/.oci/oci_api_key.pem
+
+      - name: 'Install OCI CLI'
+        run: |
+          curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
+          chmod +x install.sh
+          ./install.sh --accept-all-defaults
+          echo "/home/runner/bin" >> $GITHUB_PATH
+
+      - name: 'Fix OCI Config File Permissions'
+        run: |
+          oci setup repair-file-permissions --file /home/runner/.oci/config
+          oci setup repair-file-permissions --file /home/runner/.oci/oci_api_key.pem
+
+      - name: 'Verify OCI CLI connection'
+        run: |
+          oci os ns get
+
+      - name: Output results
+        run: echo "completed successfully!"
