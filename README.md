@@ -34,8 +34,8 @@ At the end of this tutorial, you will be able to:
 
 1. Store OCI credentials as GitHub Secrets  
 2. Configure GitHub Actions workflow  
-3. Terraform uses those secrets to authenticate to OCI  
-4. Terraform executes plan/apply  
+3. OCI CLI uses those secrets to authenticate to OCI  
+4. GitHub Actions executes OCI CLI commands or any custom automation  
 
 ---
 
