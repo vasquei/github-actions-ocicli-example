@@ -30,11 +30,6 @@ At the end of this tutorial, you will be able to:
 
 ---
 
-Title:  
-**Oracle Cloud Infrastructure and GitHub Actions | OCI**
-
----
-
 ## High-Level Flow
 
 1. Store OCI credentials as GitHub Secrets  
