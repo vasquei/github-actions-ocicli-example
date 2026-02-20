@@ -57,7 +57,7 @@ Create the following secrets:
 
 
 
-<img src="images/create_secrets.png" alt="secrets" width="1000" height="600">
+<img src="images/create_secrets.png" alt="secrets" width="1300px" height="800px">
 
 ---
 
