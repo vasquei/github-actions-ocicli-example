@@ -56,7 +56,8 @@ Create the following secrets:
 | OCI_REGION | OCI region (e.g. us-ashburn-1) |
 
 
-![secrets](images/create_secrets.png)
+
+<img src="images/create_secrets.png" alt="secrets" width="1000" height="600">
 
 ---
 
