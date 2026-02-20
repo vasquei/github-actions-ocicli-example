@@ -56,7 +56,7 @@ Create the following secrets:
 | OCI_REGION | OCI region (e.g. us-ashburn-1) |
 
 
-![secrets](images/githubactions-oci-connection.png)
+![secrets](images/create_secrets.png)
 
 ---
 
