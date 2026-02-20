@@ -4,7 +4,7 @@
 
 This tutorial explains how to authenticate to **Oracle Cloud Infrastructure (OCI)** from **GitHub Actions** in order to run a OCI command.
 
-It was created to solve an authentication blocker where a customer could not authenticate to OCI in the same way they previously did with Azure and AWS. The solution enables secure, automated authentication from GitHub Actions to OCI using OCI API credentials.
+The solution enables secure, automated authentication from GitHub Actions to OCI using OCI API credentials.
 
 At the end of this tutorial, you will be able to:
 
